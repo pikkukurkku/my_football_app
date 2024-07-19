@@ -12,6 +12,8 @@ function App() {
   const [randomMatch, setRandomMatch] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showCities, setShowCities] = useState(false); 
+  const [showTeams, setShowTeams] = useState(false); 
   
 
 
@@ -96,13 +98,27 @@ function getMatches() {
   });
 }
 
-  useEffect(() => {
-  getTeams()
-}, []);
+function toggleCities() {
+  if (!showCities && cities.length === 0) {
+    getCities();
+  }
+  setShowCities(!showCities);
+}
 
-useEffect(() => {
-  getCities()
-}, []);
+function toggleTeams() {
+  if (!showTeams && teams.length === 0) {
+    getTeams();
+  }
+  setShowTeams(!showTeams);
+}
+
+//   useEffect(() => {
+//   getTeams()
+// }, []);
+
+// useEffect(() => {
+//   getCities()
+// }, []);
 
 useEffect(() => {
   getMatches()
@@ -123,7 +139,8 @@ if (loading) {
         <h1><img src="./ball2.png" alt="ball"></img>  UEFA euro 2024 stats  <img src="./ball2.png" alt="ball"></img></h1>
         <div className="submain">
         <section>
-        <p className="p">Teams participating:</p>
+        <button onClick={toggleTeams} className="button">Teams participating: (click to {showTeams? 'hide' : 'view'})</button>
+        {showTeams && (
         <div className="teams">
         {Array.isArray(teams) && teams.map((t, index) => (
               <div key={index}className="oneTeam">
@@ -134,17 +151,26 @@ if (loading) {
                 </div>
         ))}
         </div>
+        )}
         </section>
+
+
         <section>
-          <p className="p">Host cities:</p>
-   <div className="cities">
-              {Array.isArray(cities) && cities.map((c, index) => (
-              <div key={index}>
-                <p>{c}</p>
-              </div>
-        ))}
-         </div>
-        </section>
+          <button onClick={toggleCities} className="button">Host cities (click to {showCities ? 'hide' : 'view'}):</button>
+          {showCities && (
+  <div className="cities">
+    {Array.isArray(cities) &&
+      cities.map((c, index) => (
+        <div key={index}>
+          <p>{c}</p>
+        </div>
+      ))}
+       </div>
+          )}
+      </section>
+       
+
+
         <section>
           <p className="p">Random match score:</p>
    <div className="matches">
