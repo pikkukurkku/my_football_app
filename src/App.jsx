@@ -12,6 +12,7 @@ function App() {
   const [randomMatch, setRandomMatch] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showCities, setShowCities] = useState(false); 
   
 
 
@@ -96,13 +97,20 @@ function getMatches() {
   });
 }
 
+function toggleCities() {
+  if (!showCities && cities.length === 0) {
+    getCities();
+  }
+  setShowCities(!showCities);
+}
+
   useEffect(() => {
   getTeams()
 }, []);
 
-useEffect(() => {
-  getCities()
-}, []);
+// useEffect(() => {
+//   getCities()
+// }, []);
 
 useEffect(() => {
   getMatches()
@@ -135,16 +143,24 @@ if (loading) {
         ))}
         </div>
         </section>
+
+
         <section>
-          <p className="p">Host cities:</p>
-   <div className="cities">
-              {Array.isArray(cities) && cities.map((c, index) => (
-              <div key={index}>
-                <p>{c}</p>
-              </div>
-        ))}
-         </div>
-        </section>
+          <button onClick={toggleCities} className="p">Host cities (click to {showCities ? 'hide' : 'view'}):</button>
+          {showCities && (
+  <div className="cities">
+    {Array.isArray(cities) &&
+      cities.map((c, index) => (
+        <div key={index}>
+          <p>{c}</p>
+        </div>
+      ))}
+       </div>
+          )}
+      </section>
+       
+
+
         <section>
           <p className="p">Random match score:</p>
    <div className="matches">
