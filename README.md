@@ -52,4 +52,4 @@ The main objectives were to use React, a JSON file as mock backend and to create
 - Luka and Tobi for the set-up help!
 - Jonas and Janosch for discussing a CORS workaround with me
 - Christoph for checking up on me
-- and last but not least, stack overflow, official documentation and youtubers, my old code from the bootcamp
+- and last but not least, stack overflow, official documentation, youtubers, my old code
