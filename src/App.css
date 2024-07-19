@@ -1,0 +1,63 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  width: 100%;
+  padding: 20px;
+}
+.submain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px
+}
+
+
+.teams, .cities {
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+ align-content: center;
+ text-align: center;
+  color: white;
+  line-height: 0.5;
+  padding: 15px;
+  border-radius: 5px; 
+}
+
+.oneTeam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.short {
+  text-align: center;
+  background-color: none;
+}
+
+h1 {
+  color: #32a852;
+  display: flex;
+  align-items: center;
+}
+
+.p {
+  background-color: none;
+  text-align: center;
+}
+
+
+img {
+  width: 50px;
+  padding: 10px
+}
+
+.lewy {
+  width: 200px;
+}
