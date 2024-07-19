@@ -14,6 +14,7 @@ function App() {
   const [error, setError] = useState(null);
   const [showCities, setShowCities] = useState(false); 
   const [showTeams, setShowTeams] = useState(false); 
+  const [showRandomMatch, setShowRandomMatch] = useState(false); 
   
 
 
@@ -112,6 +113,13 @@ function toggleTeams() {
   setShowTeams(!showTeams);
 }
 
+function getRandomMatch() {
+  if (!showRandomMatch && allMatches.length === 0) {
+    getMatches();
+  }
+  setShowRandomMatch(!showRandomMatch);
+}
+
 //   useEffect(() => {
 //   getTeams()
 // }, []);
@@ -121,7 +129,7 @@ function toggleTeams() {
 // }, []);
 
 useEffect(() => {
-  getMatches()
+getMatches()
 }, []);
 
 if (loading) {
@@ -172,7 +180,7 @@ if (loading) {
 
 
         <section>
-          <p className="p">Random match score:</p>
+        <button onClick={getMatches} className="button">Random match score:</button>
    <div className="matches">
               {randomMatch ? (
                 <div>

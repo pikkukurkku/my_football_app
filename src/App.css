@@ -16,24 +16,27 @@
 }
 
 
-.teams, .cities {
+.teams, .cities, .matches {
   display: flex;
   flex-direction: column;
-  background-color: grey;
+  background-color: #ADADC9;
  align-content: center;
  text-align: center;
   color: white;
   line-height: 0.5;
   padding: 15px;
   border-radius: 5px; 
+  font-size: 14px;
+
 }
 
 .oneTeam {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   text-align: center;
+  gap:10px
 }
 
 .short {
