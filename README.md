@@ -22,6 +22,8 @@ The main objectives were to use React, a JSON file as mock backend and to create
 - useState & useEffect for dynamic data rendering
 - axios for data fetching
 - conditional rendering of content
+- toggle button to display/hide participating teams and host cities
+- toggle button to display a random match score
 
 ## Technologies
 
