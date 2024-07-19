@@ -1,6 +1,6 @@
 # My football app
 
-## Seitwerk project by Natalia Ogorek
+## Mini-REACT-project for Seitwerk by Natalia Ogorek
 
 
 ### Table of Contents
@@ -13,7 +13,7 @@
 
 ## Introduction
 
-A football-themed mini-project in building a page that calls data from a json server.
+A football-themed mini-project.
 The main objectives were to use React, a JSON file as mock backend and to create a web application with calls to fetch data.
 
 ## Features
@@ -40,6 +40,7 @@ The main objectives were to use React, a JSON file as mock backend and to create
 
 - no deployment
 - please clone the repository and run npm i and then npm run dev to see the development version
+- please install the CORS Everywhere Mozilla browser extension (or a similar extension for other browsers) and turn it on
 
 ## APIs used
 
